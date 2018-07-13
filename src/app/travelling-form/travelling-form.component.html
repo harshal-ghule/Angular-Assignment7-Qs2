@@ -1,0 +1,101 @@
+<div class="container myform-align " style="text-align: center; padding-top:2em">
+
+    <div class="form-group">
+
+      <mat-radio-group class="example-radio-group" [(ngModel)]="trip">
+            <mat-radio-button class="example-radio-button"
+             *ngFor="let type of trip_type" 
+             [value]="type"
+             >
+              {{type}}
+              
+              &nbsp; &nbsp; &nbsp; &nbsp;
+
+            </mat-radio-button>
+          </mat-radio-group>
+          <div class="example-selected-value">Your trip type is: {{trip}}</div>
+          
+    </div>
+
+  <div class="form-group">
+<mat-form-field>
+  <mat-select placeholder="From" class="form-control">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+<mat-form-field>
+  <mat-select placeholder="To" class="form-control">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+</div>
+<br>  <br>
+
+<div class="form-group ">
+<mat-form-field class="example-full-width"  >
+  <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker1"   placeholder="Choose a start date">
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+
+<mat-form-field class="example-full-width" >
+  <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker2" placeholder="Choose a end date">
+  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+  <mat-datepicker #picker2></mat-datepicker>
+</mat-form-field>
+</div>
+
+
+<div class="form-group">
+    <mat-form-field>
+      <mat-select placeholder="Adults" class="form-control">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let adult of no_of_adults" [value]="adult">{{adult}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-hint>>12 yrs</mat-hint>
+    
+    
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    
+    <mat-form-field>
+      <mat-select placeholder="Children" class="form-control">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let children of no_of_childen" [value]="children">{{children}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-hint>2 - 11 yrs</mat-hint>
+   
+    
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+    <mat-form-field >
+        <mat-select placeholder="Infants" class="form-control">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let infant of no_of_infants" [value]="infant">{{infant}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-hint> <2 yrs</mat-hint>
+    </div>
+
+    <br>
+
+    <div class="button-row form-group">
+        <button mat-raised-button color="primary">Search Flights</button>
+      </div>
+
+
+
+
+
+</div>
+
